@@ -2,7 +2,7 @@
 
 namespace Core\Test\PHPUnit\Controller;
 
-use PHPUnit_Framework_ExpectationFailedException;
+use PHPUnit\Framework\ExpectationFailedException;
 use Zend\Http\PhpEnvironment\Request;
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 use Zend\Dom;
@@ -12,7 +12,7 @@ abstract class ControllerTestCase extends AbstractHttpControllerTestCase {
     protected function queryContentContainsAssertion( $path, $match, $useXPath = false ) {
         $result = $this->query($path, $useXPath);
         if ($result->count() == 0) {
-            throw new PHPUnit_Framework_ExpectationFailedException(sprintf(
+            throw new ExpectationFailedException(sprintf(
                 'Failed asserting node DENOTED BY %s EXISTS', $path
             ));
         }
@@ -24,7 +24,7 @@ abstract class ControllerTestCase extends AbstractHttpControllerTestCase {
             }
         }
 
-        throw new PHPUnit_Framework_ExpectationFailedException(sprintf(
+        throw new ExpectationFailedException(sprintf(
             'Failed asserting node denoted by %s CONTAINS content "%s"', $path,
             $match
         ));
@@ -53,14 +53,14 @@ abstract class ControllerTestCase extends AbstractHttpControllerTestCase {
     protected function notQueryContentContainsAssertion( $path, $match, $useXPath = false ) {
         $result = $this->query($path, $useXPath);
         if ($result->count() == 0) {
-            throw new PHPUnit_Framework_ExpectationFailedException(sprintf(
+            throw new ExpectationFailedException(sprintf(
                 'Failed asserting node DENOTED BY %s EXISTS', $path
             ));
         }
 
         foreach ($result as $node) {
             if ($node->nodeValue == $match) {
-                throw new PHPUnit_Framework_ExpectationFailedException(sprintf(
+                throw new ExpectationFailedException(sprintf(
                     'Failed asserting node denoted by %s DOES NOT CONTAIN content "%s"',
                     $path, $match
                 ));

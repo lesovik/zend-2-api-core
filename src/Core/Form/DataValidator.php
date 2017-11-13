@@ -1,9 +1,4 @@
 <?php
-
-/*
- * ZEND 2 API Common Libraries
- */
-
 namespace Core\Form;
 
 use Zend\Form\Form;
@@ -15,20 +10,22 @@ use Core\Exception\Form\AnnotatedForm as Exception;
 
 
 /**
- * 
- *  DataContainerValidator 
+ *
+ *  DataContainerValidator
  *
  * @author Dmitry Lesov
  */
-class DataValidator extends Form {
+class DataValidator extends Form
+{
 
+    /** @var  InputFilter */
     protected $inputFilter;
     protected $adapter;
 
     /**
-     * 
+     *
      *  adds elements to the Zend Form that acts as object input validator
-     *  expects DataContainer with keyMap variable defined as array notation Zend form 
+     *  expects DataContainer with keyMap variable defined as array notation Zend form
      *  element declaration. Example:
      'email' => [
             'name'       => 'email',
@@ -53,9 +50,9 @@ class DataValidator extends Form {
                 ],
             ],
         ]
+     * @throws Exception\MissingKeyMap
      * @param DataContainer $dataContainer
      * @param Adapter $adapter [optional] if not present will throw exception on db hooked validators
-     * @return void
      */
     public function setUp( DataContainer $dataContainer, Adapter $adapter = null ) {
 

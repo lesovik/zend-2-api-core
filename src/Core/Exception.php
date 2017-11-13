@@ -1,9 +1,4 @@
 <?php
-
-/*
- * ZEND 2 API Common Libraries
- */
-
 namespace Core;
 
 use Exception as PhpException;

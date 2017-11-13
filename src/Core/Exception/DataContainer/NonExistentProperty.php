@@ -1,9 +1,4 @@
 <?php
-
-/*
- * ZEND 2 API Common Libraries
- */
-
 namespace Core\Exception\DataContainer;
 
 use Core\Exception\DataContainer;

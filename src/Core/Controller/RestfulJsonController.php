@@ -1,16 +1,13 @@
 <?php
 
-/*
- * ZEND 2 API Common Libraries
- */
 namespace Core\Controller;
 
 use Zend\Mvc\Controller\AbstractRestfulController;
-    use Zend\Http\Response;
+use Zend\Http\Response;
 use Core\Exception;
 
 /**
- * 
+ *
  *  Override AbstractRestfulController actions as they do not return valid JsonModels
  *
  * @author Dmitry Lesov
@@ -31,7 +28,7 @@ class RestfulJsonController extends AbstractRestfulController
 
     public function delete($id)
     {
-       
+
         return $this->methodNotAllowed(__FUNCTION__);
     }
 

@@ -1,5 +1,5 @@
 {
-    "name": "Zend2ApiCore",
+    "name": "core",
     "type": "library",
     "description": "Some core functionality for Zend 2 Restful API",
     "require": {
