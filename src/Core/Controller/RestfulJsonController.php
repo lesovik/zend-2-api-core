@@ -32,7 +32,7 @@ class RestfulJsonController extends AbstractRestfulController
         return $this->methodNotAllowed(__FUNCTION__);
     }
 
-    public function deleteList()
+    public function deleteList($data)
     {
         return $this->methodNotAllowed(__FUNCTION__);
     }
